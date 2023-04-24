@@ -1,0 +1,17 @@
+<app-navbar [backgroundColor]="'#FFFFFF'"></app-navbar>
+<div class="componentContainer mt-5 pt-3">
+  <div class="designsContainer mt-5">
+    <div class="d-flex align-items-center justify-content-between mx-5 px-4">
+      <div class="pt-5 mt-2">
+        <div class="d-flex flex-column">
+          <h3 class="coursewareTitle">Material didático</h3>
+          <span class="coursewareSubtitle">Acesse suas últimas apresentações de aula.</span>
+        </div>
+      </div>
+    </div>
+    <div class="designBox mb-5">
+      <app-design class="" *ngFor="let design of designs" [design]="design">
+      </app-design>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+.componentContainer {
+  padding: 0px 64px;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.designsContainer {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+
+.periodTitleContainer {
+  width: fit-content;
+  background: #E4EBFB;
+  border-radius: 500px;
+}
+
+.periodTitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #7183A6;
+}
+
+.coursewareTitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #354564;
+}
+
+.coursewareSubtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #7183A6;
+}
+
+.showAllContentButton {
+  border-color: #4743FF;
+  color: #4743FF;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.thumbnailSlider {
+  padding-right: 32px;
+}
+
+.navigationButton {
+  border: none;
+  background-color: transparent;
+}

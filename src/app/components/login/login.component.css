@@ -1,0 +1,73 @@
+.onboardingText {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #04183E;
+}
+
+.emailSpan {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #0079FF;
+}
+
+.passwdSpan {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #04183E;
+}
+
+.customInput {
+  background: #FFFFFF;
+  border: 1px solid #E4EBFB;
+  border-radius: 4px;
+  height: 50px;
+  width: 300px;
+  outline: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #04183E;
+}
+
+.customInput:focus {
+  border-color: #66AFFF;
+}
+
+.customInput::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #D0DAEF;
+}
+
+.submitButton {
+  background-color: #1DC763;
+  border-radius: 4px;
+  height: 50px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  transition: 0.5s;
+}
+
+.submitButton:hover {
+  background-color: #1ab359 ;
+}
+
+.container {
+  background-color: #EFF2F9 !important;
+}

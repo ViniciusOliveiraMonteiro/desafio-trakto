@@ -1,0 +1,19 @@
+.componentContent {
+  width: 310px;
+}
+
+.thumbnail{
+  width: 310px;
+  height: 174px;
+  border-radius: 8px;
+  object-fit: fill;
+}
+
+.designTitle {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #354564;
+  white-space: normal;
+}

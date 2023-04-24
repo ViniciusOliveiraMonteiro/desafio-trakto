@@ -1,0 +1,43 @@
+<app-navbar [backgroundColor]="'#FFFFFF'"></app-navbar>
+<div class="componentContainer pb-5">
+  <div class="mt-5 pt-5">
+    <img [src]="banner" alt="" class="banner">
+  </div>
+  <div class="designsContainer mt-5">
+    <div class="d-flex align-items-center justify-content-between mx-5 px-4">
+      <div class="pt-5">
+        <div class="pt-2 d-flex gap-2 align-items-center">
+          <div class="periodTitleContainer py-1 px-2">
+            <span class="periodTitle">Semana {{lastDesign}} até {{firstDesign}}</span>
+          </div>
+          <div>
+            <button class="navigationButton" (click)="moveLeft()">
+              <img [src]="arrowLeft" alt="">
+            </button>
+            <button class="navigationButton" (click)="moveRight()">
+              <img [src]="arrowRight" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="d-flex flex-column mt-3">
+          <h3 class="coursewareTitle">Material didático</h3>
+          <span class="coursewareSubtitle">Acesse suas últimas apresentações de aula.</span>
+        </div>
+      </div>
+      <div class="">
+        <button 
+          class="btn btn-outline showAllContentButton"
+          (click)="showAllDesigns()"
+        >
+          Ver todo conteúdo
+        </button>
+      </div>
+    </div>
+    <div class="ms-5 ps-4 mt-5 pb-5">
+      <drag-scroll #nav [scrollbar-hidden]="true" [drag-scroll-disabled]="true">
+        <app-design class="thumbnailSlider" drag-scroll-item *ngFor="let design of designs" [design]="design">
+        </app-design>
+      </drag-scroll>
+    </div>
+  </div>
+</div>

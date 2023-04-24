@@ -1,0 +1,33 @@
+<div class="d-flex flex-column min-vh-100 bgContainer">
+  <app-navbar [displayLogoutButton]="'none'"></app-navbar>
+  <div class="d-flex flex-wrap flex-grow-1 justify-content-evenly align-items-center componentContainer">
+    <div class="d-flex flex-column align-items-center">
+      <div class="d-flex flex-column align-items-center mb-3 pb-3">
+        <h2 class="contentTitle m-0">Material didático</h2>       
+        <div class="titleDotBook"></div>
+      </div>
+      <img (click)="selectModule($event)" id="book" role="button" [src]="bookSvg" alt="">
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <div class="d-flex flex-column align-items-center mb-3 pb-3">
+        <h2 class="contentTitle m-0">Quiz</h2>
+        <div class="titleDotMedal"></div>
+      </div>
+      <img (click)="selectModule($event)" id="medal" role="button" [src]="medalSvg" alt="">
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <div class="d-flex flex-column align-items-center mb-3 pb-3">
+        <h2 class="contentTitle m-0">Desenho</h2>       
+        <div class="titleDotDrawing"></div>
+      </div>
+      <img (click)="selectModule($event)" id="drawing" role="button" [src]="drawingSvg" alt="">
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <div class="d-flex flex-column align-items-center mb-3 pb-3">
+        <h2 class="contentTitle m-0">Youtube</h2>       
+        <div class="titleDotYoutube"></div>
+      </div>
+      <img (click)="selectModule($event)" id="youtube" role="button" [src]="youtubeSvg" alt="">
+    </div>
+  </div>
+</div>

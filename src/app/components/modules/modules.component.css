@@ -1,0 +1,57 @@
+.bgContainer {
+  background-image: url('../../../assets/backgroundModulesPng.png');
+  background-size: cover;
+}
+
+.componentContainer {
+  height: 100%;
+}
+
+.contentTitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48.92px;
+  line-height: 130%;
+  /* identical to box height, or 64px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.titleDotBook {
+  width: 28px;
+  height: 4px;
+  background: #4173CD;
+}
+
+.titleDotMedal {
+  width: 28px;
+  height: 4px;
+  background: #1DC763;
+}
+
+.titleDotDrawing {
+  width: 28px;
+  height: 4px;
+  background: #F6B5FF;
+}
+
+.titleDotYoutube {
+  width: 28px;
+  height: 4px;
+  background: #FF0000;
+}
+
+@media only screen and (max-width: 1400px) {
+  img {
+    height: 250px;
+    width: 250px;
+  }
+
+  .contentTitle {
+    font-size: 40px;
+  }
+}

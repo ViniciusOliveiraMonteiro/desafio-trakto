@@ -1,0 +1,8 @@
+<div class="componentContent d-flex flex-column">
+  <div role="button" (click)="openTraktorEditor($event)" class="">
+    <img id="{{design.id}}" [src]='design.thumbs.high' class="thumbnail" alt="">
+  </div>
+  <div role="button" (click)="openTraktorEditor($event)" class="mt-3 d-flex flex-column">
+    <span id="{{design.id}}" class="designTitle">{{design.title}}</span>
+  </div>
+</div>
