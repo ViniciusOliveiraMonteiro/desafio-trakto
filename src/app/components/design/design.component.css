@@ -3,7 +3,7 @@
 }
 
 .thumbnail{
-  width: 310px;
+  width: auto;
   height: 174px;
   border-radius: 8px;
   object-fit: fill;

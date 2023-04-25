@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(): void {
+    window.localStorage.clear();
     this.router.navigate(['']);
   }
 }
