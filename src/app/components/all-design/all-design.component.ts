@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
+import { AllDesignService } from './all-design.component.service';
+import { IDesign } from '../design/interfaces/design.component';
 
 @Component({
   selector: 'app-all-design',
@@ -7,19 +8,19 @@ import axios from 'axios';
   styleUrls: ['./all-design.component.css']
 })
 export class AllDesignComponent implements OnInit {
-  constructor(){}
-  designs = [];
+  constructor(
+    private service: AllDesignService,
+  ){}
+  public designs: IDesign[] = [];
   async ngOnInit(){
-    const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
-    await axios.get(
-      'https://api.trakto.io/document',
-      {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
+    try {
+      const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
+      this.designs = await this.service.getDesigns(token);
+      if(!this.designs.length){
+        return;
       }
-    ).then((response) => {
-      this.designs = response.data.data;
-    }).catch((error) => console.log(error));
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

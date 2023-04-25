@@ -12,6 +12,7 @@ import { DesignComponent } from './components/design/design.component';
 import { DragScrollModule  } from 'ngx-drag-scroll';
 import { HighlightDirective } from './highlight.directive';
 import { AllDesignComponent } from './components/all-design/all-design.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -22,14 +23,15 @@ import { AllDesignComponent } from './components/all-design/all-design.component
     CoursewareComponent,
     DesignComponent,
     HighlightDirective,
-    AllDesignComponent,
+    AllDesignComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    DragScrollModule
+    DragScrollModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
