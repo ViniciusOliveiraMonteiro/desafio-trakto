@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modules',
   templateUrl: './modules.component.html',
   styleUrls: ['./modules.component.css']
 })
-export class ModulesComponent {
+export class ModulesComponent implements OnInit {
   constructor(
     private router: Router,
-    private route: ActivatedRoute
   ) {}
-  OnInit(){
-    
+  public bookPng = '';
+  public medalPng = '';
+  public drawingPng = '';
+  public youtubePng = '';
+
+  ngOnInit(): void{
+    this.bookPng = 'assets/bookPng.png';
+    this.medalPng = 'assets/medalPng.png';
+    this.drawingPng = 'assets/drawingPng.png';
+    this.youtubePng = 'assets/youtubePng.png';
   }
-  bookSvg = 'assets/booksSvg.svg';
-  medalSvg = 'assets/medalSvg.svg';
-  drawingSvg = 'assets/drawingSvg.svg';
-  youtubeSvg = 'assets/youtubeSvg.svg';
 
   selectModule(event: MouseEvent): void {
     switch ((event.target as Element).id) {

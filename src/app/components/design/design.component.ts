@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Design } from './design.model';
+import { IDesign } from './interfaces/design.component';
 
 @Component({
   selector: 'app-design',
@@ -7,7 +7,7 @@ import { Design } from './design.model';
   styleUrls: ['./design.component.css']
 })
 export class DesignComponent {
-  @Input() design!: Design;
+  @Input() design!: IDesign;
   constructor(){}
   openTraktorEditor(event: MouseEvent): void {
     let traktoId = (event.target as Element).id;
