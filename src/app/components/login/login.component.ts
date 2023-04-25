@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import axios, { AxiosResponse } from 'axios';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LoginService } from './login.module.service';
 
 @Component({
   selector: 'app-login',
@@ -12,23 +13,35 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private service : LoginService
   ) {}
 
-  loginForm = this.formBuilder.group({
-    email: '',
-    password: ''
-  });
+  public loginForm: FormGroup = this.formBuilder.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required]
+  });;
+  public isSubmit = false;
 
-  async onSubmit(): Promise<AxiosResponse> {
-    return await axios.post(
-      'https://api.trakto.io/auth/signin', 
-      this.loginForm.value
-    ).then((response) => {
-      localStorage.setItem('DATA_USER', JSON.stringify(response.data));
-      console.log(localStorage.getItem('DATA_USER'));
+  async onSubmit(): Promise<void> {
+    this.isSubmit = true;
+    try {
+      if(!this.loginForm.valid){
+        this.isSubmit = false;
+        this.loginForm.markAllAsTouched();
+        return;
+      }
+      let response = await this.service.login(this.loginForm.value);
+      if(!response){
+        this.isSubmit = false;
+        this.loginForm.get('password')?.setErrors({invalidCredentials: true});
+        return;
+      }
+      localStorage.setItem('DATA_USER', JSON.stringify(response));
+      this.isSubmit = false;
       this.router.navigate(['/modulos']);
-      return response.data;
-    }).catch(error => console.log(error));
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

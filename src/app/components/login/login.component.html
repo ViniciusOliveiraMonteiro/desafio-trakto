@@ -15,16 +15,56 @@
         <div class="mb-4">
           <span class="onboardingText">Olá, faça login em sua conta</span>
         </div>
-        <div class="d-flex flex-column mb-4">
+        <div class="d-flex flex-column mb-4 form-group">
           <label class="emailSpan mb-1" for="email">E-mail</label>
-          <input id="email" formControlName="email" placeholder="exemplo@email.com" class="customInput p-3" type="text">
+          <input 
+            id="email" name="email" formControlName="email" 
+            class="customInput p-3" type="text" required
+            placeholder="exemplo@email.com"
+          >
+          <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+            <div 
+              *ngIf="loginForm.controls['email'].errors?.['required']"
+              class="text-danger"
+            >
+              O campo email é obrigatório
+            </div>
+          </div>
         </div>
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column form-group">
           <label class="passwdSpan mb-1" for="password">Senha</label>
-          <input id="password" formControlName="password" placeholder="••••••••••" class="customInput p-3" type="password">
+          <input 
+            id="password" name="password" formControlName="password" 
+            placeholder="••••••••••"
+            class="customInput p-3" type="password" required
+          >
+        </div>
+        <div
+          *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+          <div 
+            *ngIf="loginForm.controls['password'].errors?.['required']"
+            class="text-danger"
+          >
+            O campo senha é obrigatório
+          </div>
+          <div 
+            *ngIf="loginForm.controls['password'].errors?.['invalidCredentials']"
+            class="text-danger"
+          >
+            Credencias inválidas
+          </div>
         </div>
         <div class="mt-4">
-          <button type="submit" class="submitButton w-100">Entrar</button>
+          <button type="submit" class="submitButton w-100"
+          >
+            <mat-spinner
+              *ngIf="isSubmit"
+              class="spinner"
+              color="#FFFFFF"
+            >
+            </mat-spinner>
+            {{isSubmit ? 'Entrando...' : 'Entrar'}}
+          </button>
         </div>
       </form>
     </div>

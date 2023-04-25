@@ -50,6 +50,9 @@
 }
 
 .submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #1DC763;
   border-radius: 4px;
   height: 50px;
@@ -70,4 +73,10 @@
 
 .container {
   background-color: #EFF2F9 !important;
+}
+
+.spinner {
+  width: 21px !important;
+  height: 21px !important;
+  margin-right: 6px;
 }
