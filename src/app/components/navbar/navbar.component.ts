@@ -14,20 +14,20 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ){}
-  currentDate = moment().format('DD/MM/YYYY');
-  avatarSrc = '../../assets/avatar.png';
-  traktoEduLogo = 'assets/traktoEduLogo.svg';
-  calendarSvg = 'assets/calendarSvg.svg';
-  notificationSvg = 'assets/notificationSVG.svg';
-  arrowDownSvg = 'assets/arrowDown.svg';
-  logoutSvg = 'assets/logoutSvg.svg';
-  userLogo = '';
+  public currentDate = moment().format('DD/MM/YYYY');
+  public avatarSrc = '';
+  public logoutSvg = 'assets/logoutSvg.svg';
   
-  ngOnInit(){
-    const { logo: {url: {high: {url}} } } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
-    this.userLogo = url;
+  ngOnInit(): void{
+    const { logo } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
+    this.avatarSrc = logo?.url?.high?.url;
+    this.avatarSrc = this.avatarSrc ? this.avatarSrc : 'assets/avatar.png';
   }
-  changeEnvironmentAction(){
+  changeEnvironmentAction(): void {
     this.router.navigate(['/modulos']);
+  }
+
+  logout(): void {
+    this.router.navigate(['']);
   }
 }
