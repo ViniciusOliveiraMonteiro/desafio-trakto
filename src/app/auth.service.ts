@@ -6,4 +6,12 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   constructor() { }
+
+  isAuthenticated(): boolean {
+    if (!window.localStorage.getItem('DATA_USER')) {
+      return false;
+    }
+    const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
+    return token ? true : false;
+  }
 }
