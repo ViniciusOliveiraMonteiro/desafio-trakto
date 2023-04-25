@@ -1,8 +1,9 @@
+import { IDesign } from './../design/interfaces/design.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import axios from 'axios';
 import { DragScrollComponent } from 'ngx-drag-scroll';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { CoursewareService } from './courseware.component.service';
 
 @Component({
   selector: 'app-courseware',
@@ -13,28 +14,26 @@ export class CoursewareComponent implements OnInit {
   @ViewChild('nav', {read: DragScrollComponent}) ds!: DragScrollComponent;
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private service: CoursewareService,
   ){}
-  designs = [] as any[];
-  arrowRight = 'assets/arrowRight.svg';
-  arrowLeft = 'assets/arrowLeft.svg';
-  banner = 'assets/coursewareBanner.svg';
-  firstDesign = '';
-  lastDesign = '';
+  public designs: IDesign[] = [];
+  public arrowRight = 'assets/arrowRight.svg';
+  public arrowLeft = 'assets/arrowLeft.svg';
+  public banner = 'assets/bannerPng.png';
+  public firstDesign = '';
+  public lastDesign = '';
   async ngOnInit(){
-    const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
-    await axios.get(
-      'https://api.trakto.io/document?updated_between_start=2023-04-21&total_per_page=10&order_by=updated_at&order_orientation=desc',
-      {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
+    try {
+      const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
+      this.designs = await this.service.getDesigns(token);
+      if(!this.designs.length){
+        return;
       }
-    ).then((response) => {
-      this.designs = response.data.data;
-      this.lastDesign = moment(this.designs.pop().updated_at).format('DD/MM');
-      this.firstDesign = moment(this.designs.shift().updated_at).format('DD/MM');
-    }).catch((error) => console.log(error));
+      this.lastDesign = moment(this.designs[this.designs.length -1].updated_at).format('DD/MM');
+      this.firstDesign = moment(this.designs[0].updated_at).format('DD/MM');
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   moveLeft() {
