@@ -20,11 +20,11 @@ export class CoursewareComponent implements OnInit {
   public arrowRight = 'assets/arrowRight.svg';
   public arrowLeft = 'assets/arrowLeft.svg';
   public banner = 'assets/bannerPng.png';
-  public firstDesign = '';
-  public lastDesign = '';
+  public firstDesign = moment().format('DD/MM');
+  public lastDesign = moment().format('DD/MM');
   async ngOnInit(){
     try {
-      const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
+      const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "{}");
       this.designs = await this.service.getDesigns(token);
       if(!this.designs.length){
         return;

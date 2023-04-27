@@ -9,9 +9,9 @@ import { IDesign } from './interfaces/design.component';
 export class DesignComponent {
   @Input() design!: IDesign;
   constructor(){}
-  openTraktorEditor(event: MouseEvent): void {
+  public openTraktorEditor(event: MouseEvent): void {
     let traktoId = (event.target as Element).id;
-    window.open(`https://editor.trakto.io/editor/${traktoId}`)
+    window.open(`https://editor.trakto.io/editor/${traktoId}`);
   }
 
 }

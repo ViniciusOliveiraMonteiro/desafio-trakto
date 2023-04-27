@@ -10,7 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CoursewareComponent } from './components/courseware/courseware.component';
 import { DesignComponent } from './components/design/design.component';
 import { DragScrollModule  } from 'ngx-drag-scroll';
-import { HighlightDirective } from './highlight.directive';
+import { HighlightDirective } from './highlight/highlight.directive';
 import { AllDesignComponent } from './components/all-design/all-design.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
