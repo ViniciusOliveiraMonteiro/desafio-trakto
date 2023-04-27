@@ -12,14 +12,13 @@ export class NavbarComponent implements OnInit {
   @Input() backgroundColor!: string;
   constructor(
     private router: Router,
-    private route: ActivatedRoute
   ){}
   public currentDate = moment().format('DD/MM/YYYY');
   public avatarSrc = '';
   public logoutSvg = 'assets/logoutSvg.svg';
   
   ngOnInit(): void{
-    const { logo } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
+    const { logo } = JSON.parse(window.localStorage.getItem('DATA_USER') || "{}");
     this.avatarSrc = logo?.url?.high?.url;
     this.avatarSrc = this.avatarSrc ? this.avatarSrc : 'assets/avatar.png';
   }

@@ -4,7 +4,7 @@ import { ModulesComponent } from './components/modules/modules.component';
 import { LoginComponent } from './components/login/login.component';
 import { CoursewareComponent } from './components/courseware/courseware.component';
 import { AllDesignComponent } from './components/all-design/all-design.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },

@@ -5,10 +5,9 @@ import { DesignComponent } from './design.component';
 describe('DesignComponent', () => {
   let component: DesignComponent;
   let fixture: ComponentFixture<DesignComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DesignComponent ]
+      declarations: [ DesignComponent ],
     })
     .compileComponents();
 

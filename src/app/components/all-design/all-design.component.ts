@@ -14,7 +14,7 @@ export class AllDesignComponent implements OnInit {
   public designs: IDesign[] = [];
   async ngOnInit(){
     try {
-      const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "");
+      const { access_token: token } = JSON.parse(window.localStorage.getItem('DATA_USER') || "{}");
       this.designs = await this.service.getDesigns(token);
       if(!this.designs.length){
         return;

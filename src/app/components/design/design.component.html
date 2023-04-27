@@ -1,4 +1,4 @@
-<div class="componentContent d-flex flex-column justify-content-center align-items-center">
+<div *ngIf="design" class="componentContent d-flex flex-column justify-content-center align-items-center">
   <div role="button" (click)="openTraktorEditor($event)" class="">
     <img id="{{design.id}}" [src]='design.thumbs.high' class="thumbnail" alt="">
   </div>
