@@ -62,8 +62,8 @@ describe('LoginComponent', () => {
   it('should check user correct credentials is entered', async () => {
     let email = component.loginForm.controls['email'];
     let password = component.loginForm.controls['password'];
-    email.setValue('viniciussppt@gmail.com');
-    password.setValue('Vinizinho1!');
+    email.setValue('vijuliesse@gmail.com');
+    password.setValue('Borabaea1!');
     let response = await service.login(component.loginForm.value);
     expect(response).toBeTruthy();
   });
@@ -71,8 +71,8 @@ describe('LoginComponent', () => {
   it('should redirect to modules on success login', async () => {
     let email = component.loginForm.controls['email'];
     let password = component.loginForm.controls['password'];
-    email.setValue('viniciussppt@gmail.com');
-    password.setValue('Vinizinho1!');
+    email.setValue('vijuliesse@gmail.com');
+    password.setValue('Borabaea1!');
     await component.onSubmit();
     expect(component.response).toBeTruthy();
   });

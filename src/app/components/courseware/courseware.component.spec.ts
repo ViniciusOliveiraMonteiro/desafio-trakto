@@ -37,8 +37,8 @@ describe('CoursewareComponent', () => {
   it('should check user success get data', async () => {
     let email = loginComponent.loginForm.controls['email'];
     let password = loginComponent.loginForm.controls['password'];
-    email.setValue('viniciussppt@gmail.com');
-    password.setValue('Vinizinho1!');
+    email.setValue('vijuliesse@gmail.com');
+    password.setValue('Borabaea1!');
     let userLogin = await loginService.login(loginComponent.loginForm.value);
     let getDesigns = await coursewareService.getDesigns(userLogin.access_token);
     expect(getDesigns).toBeTruthy();
