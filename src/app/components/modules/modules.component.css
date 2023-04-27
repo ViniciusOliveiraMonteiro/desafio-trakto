@@ -45,6 +45,14 @@
   background: #FF0000;
 }
 
+img {
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
 @media only screen and (max-width: 1400px) {
   img {
     height: 250px;
