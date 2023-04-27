@@ -16,6 +16,7 @@ ng serve
 
 ## Testes
 Execute o comando ng test para rodar os testes.
+</br>
 OBS: É necessario alterar as credenciais no momento do teste, os arquivos são: all-design.component.spec.ts, courseware.component.spec.ts e login.component.spec.ts
 ```bash
 ng test
