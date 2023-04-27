@@ -1,5 +1,6 @@
 # Desafio trakto
 Este é um desafio proposto pela trakto para uma vaga de desenvolvedor front-end.
+</br>
 Esta aplicação foi feita utilizando o  [Angular CLI](https://github.com/angular/angular-cli) versão 15.2.6.
 
 ## Instalação
